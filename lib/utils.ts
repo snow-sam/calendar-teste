@@ -9,3 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 export function createWeekInterval(day: Date = new Date()) {
   return interval(startOfWeek(day, { weekStartsOn: 1 }), lastDayOfWeek(day, { weekStartsOn: 6 }))
 }
+
+export function capitalize(str: string){
+  return str[0].toUpperCase() + str.slice(1)
+}
