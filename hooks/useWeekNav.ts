@@ -7,7 +7,8 @@ export const useWeekNav = (options: any) => {
     setDefaultOptions(options)
     const today = new Date()
     const [currentDay, setCurrentDay] = useState(today)
-    const days = eachDayOfInterval(createWeekInterval(currentDay))
+    const interval = createWeekInterval(currentDay)
+    const days = eachDayOfInterval(interval)
 
     const getNextWeek = () => {
         setCurrentDay(addWeeks(currentDay, 1))
@@ -18,6 +19,6 @@ export const useWeekNav = (options: any) => {
     }
 
     return {
-        today, currentDay, setCurrentDay, days, getNextWeek, getPrevWeek
+        today, currentDay, setCurrentDay, days, interval, getNextWeek, getPrevWeek,
     }
 }
