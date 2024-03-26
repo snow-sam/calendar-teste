@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-import { Menu } from '@/components/menu'
 import { DrawerDemo } from '@/components/drawer'
 import { db } from '@/lib/db';
 
@@ -28,7 +27,6 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-stone-200`}>
         <main className="m-auto grid w-full max-w-xl relative grid-rows-[fit-content(100%)_auto] min-h-[100dvh]">
-          <Menu />
           {children}
           <DrawerDemo professores={professores} />
         </main>

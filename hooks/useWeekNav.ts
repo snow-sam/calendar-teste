@@ -1,14 +1,12 @@
 import { useState } from "react"
-import { eachDayOfInterval, addWeeks, subWeeks, setDefaultOptions } from "date-fns"
-import { createWeekInterval } from "@/lib/utils"
+import { interval, addWeeks, subWeeks, setDefaultOptions } from "date-fns"
 
 
-export const useWeekNav = (options: any) => {
+export const useWeekNav = (startDate: Date, endDate: Date, options: any) => {
     setDefaultOptions(options)
     const today = new Date()
     const [currentDay, setCurrentDay] = useState(today)
-    const interval = createWeekInterval(currentDay)
-    const days = eachDayOfInterval(interval)
+    const daysInterval = interval(startDate, endDate)
 
     const getNextWeek = () => {
         setCurrentDay(addWeeks(currentDay, 1))
@@ -19,6 +17,6 @@ export const useWeekNav = (options: any) => {
     }
 
     return {
-        today, currentDay, setCurrentDay, days, interval, getNextWeek, getPrevWeek,
+        today, currentDay, setCurrentDay, daysInterval, getNextWeek, getPrevWeek,
     }
 }
