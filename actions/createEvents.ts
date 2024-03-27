@@ -11,3 +11,12 @@ export const createEvent = async (data: z.infer<typeof formEventos>) => {
     })
     revalidateTag("my-app-user")
 }
+
+export const deleteEvent = async (id: string) => {
+    await db.eventos.delete({
+        where: {
+            id
+        }
+    })
+    revalidateTag("my-app-user")
+}

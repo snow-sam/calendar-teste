@@ -7,7 +7,6 @@ export const formEventos = z.object({
         const validations = [
             isValid(data),
             !isWeekend(data),
-            !isWednesday(data)
         ]
         return validations.every(item => item)
     },

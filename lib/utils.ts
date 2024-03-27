@@ -11,4 +11,4 @@ export function capitalize(str: string){
 }
 
 export const parseDate = (date: string) => parse(date, "yyyy-MM-dd", new Date())
-export const formatDate = (date: Date, mask = "yyyy-MM-dd") => format(date, mask)
+export const formatDate = (date: Date | string, mask = "yyyy-MM-dd") => format(date, mask)
