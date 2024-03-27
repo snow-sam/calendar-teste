@@ -65,6 +65,7 @@ export const DrawerDemo = ({ professores = [] }: DrawerDemoProps) => {
     })
 
     async function onSubmit(values: z.infer<typeof formEventos>) {
+        console.log(values)
         await createEvent(values)
     }
 
